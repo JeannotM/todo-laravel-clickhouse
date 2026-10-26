@@ -1,0 +1,75 @@
+@import 'tailwindcss';
+
+@source '../views';
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+
+@theme {
+    --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+}
+
+body.is-dragging, body.is-dragging * { cursor: grabbing !important; }
+
+.search-button input, .search-button button {
+    background-color:white;
+    color:black;
+    margin:0;
+    padding: 4px 8px;
+
+}
+
+.search-button input {
+    border-radius: 5px 0 0 5px;
+}
+
+.search-button button {
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+}
+.tasks {
+    margin-top: 24px;
+}
+
+.tasks .task-type {
+    width:250px;
+    height:fit-content;
+    padding: 10px;
+    background-color: #2a2a2a;
+    margin: 0 12px;
+    border-radius: 4px;
+}
+
+.task-type:has(> .task-container > .drop-indicator) { outline: 2px dashed #3b82f655; }
+.task-container {
+    width: 100%;
+    min-height: 2.5rem;
+    height: fit-content;
+    padding: 5px;
+    flex-direction: column;
+    display: flex;
+    gap: 8px;
+}
+
+custom-task { display: block; touch-action: none; user-select: none; cursor: grab; }
+custom-task.dragging { opacity: .9; box-shadow: 0 8px 24px rgb(0 0 0 / .2); }
+
+.task, custom-task {
+    background-color: #3A3A3A;
+    border-radius:4px;
+    font-size: 12px;
+    padding: 4px;
+}
+
+.task:hover, custom-task:hover {
+    background-color: #3D3D3D;
+}
+
+.task-add {
+    cursor:pointer;
+}
+
+.task-add:after {
+    content: '+';
+}
+
+
+.drop-indicator { height: 3px; margin: 4px 0; border-radius: 2px; background: #3b82f6; }

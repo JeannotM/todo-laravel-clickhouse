@@ -1,0 +1,6 @@
+{
+    "require": {
+        "livewire/livewire": "^4.4",
+        "laravel-clickhouse/laravel-clickhouse": "^1.5"
+    }
+}
